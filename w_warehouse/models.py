@@ -34,6 +34,5 @@ class Warehouse(models.Model):
         db_table = 'w_wharehouse'
         verbose_name = '仓库信息'
         verbose_name_plural = '仓库信息'
-        # verbose_name_plural = "data id"
-        # ordering = ['goods_shape']
+        # ordering = ['start_date']
 
