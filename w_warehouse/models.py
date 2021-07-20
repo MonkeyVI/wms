@@ -1,7 +1,7 @@
 from django.db import models
 
+
 # Create your models here.
-from django.utils.timezone import now
 
 
 class WarehouseType(models.Model):
@@ -26,9 +26,9 @@ class Warehouse(models.Model):
     phone_no = models.CharField(max_length=64, verbose_name='联系电话')
     address = models.CharField(max_length=64, default=None, verbose_name='地址')
     status = models.BooleanField(verbose_name='合作状态')
-    start_date = models.DateField(default=now(), verbose_name='合作时间')
-    end_date = models.DateField(default=now(), verbose_name='终止合作时间')
-    memo = models.CharField(max_length=128, verbose_name='备注')
+    start_date = models.DateField(blank=True, verbose_name='合作时间')
+    end_date = models.DateField(blank=True, verbose_name='终止合作时间', null=True)
+    memo = models.CharField(max_length=128, verbose_name='备注', null=True)
 
     class Meta:
         db_table = 'w_wharehouse'
@@ -36,3 +36,4 @@ class Warehouse(models.Model):
         verbose_name_plural = '仓库信息'
         # verbose_name_plural = "data id"
         # ordering = ['goods_shape']
+
